@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  serlo-content-crawler:
+    image: serlo-content-crawler:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: development
+      CONTENT_USER: lehrer@schul-cloud.org
+      CONTENT_PASSWORD: Cactus-Carl123
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - .:/app
+    command: npm run debug
