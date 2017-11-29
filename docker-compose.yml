@@ -9,11 +9,12 @@ services:
       dockerfile: Dockerfile
     environment:
       NODE_ENV: development
+      CONTENT_URL: http://mbp.local:4040/resources
       CONTENT_USER: lehrer@schul-cloud.org
-      CONTENT_PASSWORD: Cactus-Carl123
+      CONTENT_PASSWORD: schulcloud
     ports:
       - 3000:3000
-      - 9229:9229
+      - 9230:9230
     volumes:
       - .:/app
     command: npm run debug
